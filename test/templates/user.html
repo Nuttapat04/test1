@@ -2,26 +2,35 @@
 <html>
 <head>
     <title>User Profile</title>
+    <!-- Bootstrap CSS -->
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+<!-- Bootstrap JS and dependencies -->
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
 </head>
 <body>
-    <h1>User Profiles</h1>
-    <table border="1">
+    <h1>User Profile</h1>
+    <table>
         <tr>
-            <th>Username</th>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Password</th>
-            <th>User ID</th>
-        </tr>
-        {% for username, user_info in users.items() %}
-        <tr>
-            <td>{{ username }}</td>
+            <th>Name:</th>
             <td>{{ user_info['name'] }}</td>
+        </tr>
+        <tr>
+            <th>Surname:</th>
             <td>{{ user_info['surname'] }}</td>
+        </tr>
+        <tr>
+            <th>Username:</th>
+            <td>{{ user_info['username'] }}</td>
+        </tr>
+        <tr>
+            <th>Password:</th>
             <td>{{ user_info['password'] }}</td>
+        </tr>
+        <tr>
+            <th>User ID:</th>
             <td>{{ user_info['userid'] }}</td>
         </tr>
-        {% endfor %}
     </table>
 </body>
 </html>
