@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Page</title>
+</head>
+<body>
+    <h1>User Page</h1>
+    <table border="1">
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>User ID</th>
+        </tr>
+        {% for username, user_info in users.items() %}
+        <tr>
+            <td>{{ username }}</td>
+            <td>{{ user_info['password'] }}</td>
+            <td>{{ user_info['email'] }}</td>
+            <td>{{ user_info['age'] }}</td>
+            <td>{{ user_info['userid'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
